@@ -1,0 +1,148 @@
+@import '../variables';
+@import '../extends';
+
+
+.search {
+    @extend %contentCenter;
+
+    background-color: $searchBGC;
+
+    margin: $margin 0px;
+    padding: $padding 0px;
+    border-radius: 5px;
+
+    p {
+        color: $titleColor;
+        margin-right: $margin;
+    }
+    
+    input {
+        width: 50%;
+        height: 31px;
+        padding-left: $padding;
+    
+        border: 1px solid transparent;
+        border-radius: $borderRadius;
+    }
+    
+    input:focus {
+        border: 1px solid $inputFcsBorder;
+        outline: none;
+        border-radius: $borderRadius;
+    }
+    
+    input:focus::placeholder {
+        color: transparent;
+      }
+    
+    input::placeholder {
+        font-size: $inputFontSize;
+        color: $placeholderColor;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    button {
+        font-family: 'Roboto', sans-serif;
+        background: $white;
+    
+        border: 1px solid #e4e4e4;
+        border-radius: $borderRadius;
+        outline: 0;
+    
+        margin-left: $margin;
+        padding: 7px 9px;
+    
+        transition: background .1s linear;
+    }
+    
+    button:hover {
+        background: #dfdfdf;
+        cursor: pointer;
+    }
+}
+
+
+/* Content */
+.content {
+    max-width: $smallContainer;
+    padding: 0 $containerPadding;
+    margin: 0 auto;
+
+    @extend %contentBetween;
+    flex-wrap: wrap;
+}
+
+.item {
+    position: relative;
+    color: $white;
+
+    width: 500px;
+    height: 250px;
+
+    background-color: $itemBGC;
+    border-radius: $borderRadius;
+
+    margin-bottom: $margin;
+    overflow: hidden;
+}
+
+.item a {
+    color: $white;
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+.item:hover .title_wrapper {
+    transform: translateY(0);
+}
+
+.title_wrapper {
+    @extend %contentCenter;
+
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    text-align: center;
+    padding: 10px 10px;
+
+    transform: translateY(-120%);
+    transition: transform .4s ease;
+}
+
+.item_add {
+    position: absolute;
+    z-index: 3;
+    bottom: 20px;
+    right: 20px;
+
+
+    height: 30px;
+
+    button {
+        height: 30px;
+        width: 80px;
+        background: $itemBtnBGC;
+    
+        border: 0;
+        border-radius: $borderRadius;
+    
+        transition: all .2s ease;
+    }
+    
+    button:hover {
+        cursor: pointer;
+        color: $white;
+        background: $itemBtnBGCHover;
+    }
+}
+
+
+/* ./Content */
+

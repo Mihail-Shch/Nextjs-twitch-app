@@ -1,0 +1,15 @@
+@import 'variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    border: 0;
+}
+
+body {
+    font-size: $bodyFontSize;
+    font-family: 'Roboto', sans-serif;
+    color: $bodyFontColor;
+}
