@@ -1,1 +1,1 @@
-Clone the repo into your folder by using "git clone https://github.com/Mihail-Shch/Twitch-app", open the project in VSCode or use your one, open ternimal then install dependencies by using "npm install", after that type the final command "npm run dev" and that's it. 
+Clone the repo into your folder by using "git clone https://github.com/Mihail-Shch/Twitch-app", open the project in VSCode or use your one, open terminal then install dependencies by using "npm install", after that type the final command "npm run dev" and that's it. 
