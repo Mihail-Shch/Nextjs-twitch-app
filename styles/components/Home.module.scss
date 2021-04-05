@@ -68,7 +68,7 @@
     padding: 0 $containerPadding;
     margin: 0 auto;
 
-    @extend %contentBetween;
+    @extend %contentAround;
     flex-wrap: wrap;
 }
 
