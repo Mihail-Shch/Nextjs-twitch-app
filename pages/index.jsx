@@ -44,22 +44,36 @@ function index() {
         });
 
         const { data } = await fetchData.json();
-        setItems(data);
+
+        const clonedData = data;
+
+        const re = /%{width}x%{height}/gi;
+
+        const modifiedData = clonedData.map((video) => ({
+            id: video['id'],
+            title: video['title'],
+            url: video['url'],
+            thumbnail: video['thumbnail_url'].replace(re, '1920x1080'),
+        }))
+
+        setItems(modifiedData);
         setText('');
     }
 
 
     return (
         <MainLayout title={'Search videos'}>
-            <div className={style.search}>
-                <p>Введите название канала</p>
-                <input type="text" value={text} placeholder="Enter the name..." onChange={onChangeValue} />
-                <button onClick={getData}>Найти</button>
-            </div>
-            <div className={style.content}>
-                {
-                    items && items.map((item, index) => <SearchItem item={item} key={index} />)
-                }
+            <div className={style.content_wrapper}>
+                <div className={style.search}>
+                    <p>Введите название канала</p>
+                    <input type="text" value={text} placeholder="Enter the name..." onChange={onChangeValue} />
+                    <button onClick={getData}>Найти</button>
+                </div>
+                <div className={style.content}>
+                    {
+                        items && items.map((item, index) => <SearchItem item={item} key={index} />)
+                    }
+                </div>
             </div>
 
         </MainLayout>

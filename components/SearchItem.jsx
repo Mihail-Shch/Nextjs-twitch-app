@@ -10,17 +10,17 @@ function SearchItem({ item }) {
         setIsClicked(!isClicked)
     }
 
-
     return (
         <div className={style.item}>
             <a href={item.url} target="_blank">
+                <img src={item.thumbnail} alt="thumbnail" />
                 <div className={style.title_wrapper}>
                     <h2>{item.title}</h2>
                 </div>
             </a>
             <div className={style.item_add}>
                 {
-                    !isClicked ? <button className={style.item_btn} onClick={onAddVideo}>Добавить</button> : <button className={style.item_btn}>Добавлено</button>
+                    !isClicked ? <button className={style.actionBtn} onClick={onAddVideo}>Добавить</button> : <button className={style.actionBtn}>Добавлено</button>
                 }
             </div>
         </div>

@@ -63,12 +63,22 @@
 
 
 /* Content */
-.content {
-    max-width: $smallContainer;
-    padding: 0 $containerPadding;
-    margin: 0 auto;
 
-    @extend %contentAround;
+.buttonClearAll_wrapper {
+    text-align: end;
+
+    margin-top: $margin;
+    margin-bottom: $margin;
+}
+
+.content_wrapper {
+    @extend %smallContainerWrapper;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -76,14 +86,17 @@
     position: relative;
     color: $white;
 
-    width: 500px;
+    width: 450px;
     height: 250px;
-
     background-color: $itemBGC;
     border-radius: $borderRadius;
 
     margin-bottom: $margin;
     overflow: hidden;
+}
+
+.item:not(:nth-of-type(3n)) {
+    margin-right: 70px;
 }
 
 .item a {
@@ -124,23 +137,25 @@
 
 
     height: 30px;
+}
 
-    button {
-        height: 30px;
-        width: 80px;
-        background: $itemBtnBGC;
+.actionBtn {
+    height: 30px;
+    width: 90px;
     
-        border: 0;
-        border-radius: $borderRadius;
-    
-        transition: all .2s ease;
-    }
-    
-    button:hover {
-        cursor: pointer;
-        color: $white;
-        background: $itemBtnBGCHover;
-    }
+
+    background: $itemBtnBGC;
+
+    border: 0;
+    border-radius: $borderRadius;
+
+    transition: all .2s ease;
+}
+
+.actionBtn:hover {
+    cursor: pointer;
+    color: $white;
+    background: $itemBtnBGCHover;
 }
 
 

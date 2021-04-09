@@ -26,25 +26,38 @@ function favorite() {
         }
     }
 
+    const clearAll = () => {
+        sessionStorage.clear();
+        setVideos([]);
+    }
+
     return (
         <MainLayout title={'Favorite videos'}>
-            <div className={style.content}>
-                {
-                    videos && videos.map((obj, index) => {
-                        return (
-                            <div className={style.item} key={index}>
-                                <a href={obj.url} target="_blank">
-                                    <div className={style.title_wrapper}>
-                                        <h1>{obj.title}</h1>
+
+            <div className={style.content_wrapper}>
+                <div className={style.buttonClearAll_wrapper}>
+                    <button onClick={clearAll} className={style.actionBtn}>Удалить все</button>
+                </div>
+                <div className={style.content}>
+
+                    {
+                        videos && videos.map((obj, index) => {
+                            return (
+                                <div className={style.item} key={index}>
+                                    <a href={obj.url} target="_blank">
+                                        <img src={obj.thumbnail} alt="thumbnail" />
+                                        <div className={style.title_wrapper}>
+                                            <h1>{obj.title}</h1>
+                                        </div>
+                                    </a>
+                                    <div className={style.item_add}>
+                                        <button className={style.actionBtn} onClick={() => removeTask(obj)}>Удалить</button>
                                     </div>
-                                </a>
-                                <div className={style.item_add}>
-                                    <button className={style.item_btn} onClick={() => removeTask(obj)}>Удалить</button>
                                 </div>
-                            </div>
-                        )
-                    })
-                }
+                            )
+                        })
+                    }
+                </div>
             </div>
         </MainLayout >
     )

@@ -9,3 +9,9 @@
     justify-content: space-around;
     align-items: center;
 }
+
+%smallContainerWrapper {
+    max-width: $smallContainer;
+    padding: 0 $containerPadding;
+    margin: 0 auto;
+}

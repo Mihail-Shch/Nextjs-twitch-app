@@ -13,3 +13,8 @@ body {
     font-family: 'Roboto', sans-serif;
     color: $bodyFontColor;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
